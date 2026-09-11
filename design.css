@@ -1,12 +1,19 @@
 body{
-    display: flex;
-    align-items: center;
     background-color: #FCD597;
 }
 h1 {
+    display: flex;
+    align-items: center;
     font-family: Helvetica;
 }
+
+p{
+    display: flex;
+    align-items: center;
+}
 .menu{
+   display: flex;
+   align-items: center;
    color: #FCC08D;
    border: solid 5px;
    margin: 10px 100px 10px 100px;
