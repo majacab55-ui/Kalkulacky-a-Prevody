@@ -9,12 +9,12 @@ h1 {
 }
 
 p{
-    display: flex;
-    align-items: center;
+   display: flex;
+   justify-content: center;
 }
 .menu{
    display: flex;
-   align-items: center;
+   justify-content: center;
    color: #FCC08D;
    border: solid 5px;
    margin: 10px 100px 10px 100px;
