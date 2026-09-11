@@ -24,12 +24,9 @@ p {
     max-width: 600px;
     margin: 0 auto;
     padding: 30px;
-
     border: 3px solid #8B5E34;
     border-radius: 20px;
-
     background-color: #FFE4BA;
-
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -38,19 +35,14 @@ p {
 .calculator-button {
     display: block;
     padding: 16px 20px;
-
     background-color: #FCC08D;
     color: #4A2C18;
-
     border: 2px solid #8B5E34;
     border-radius: 12px;
-
     text-align: center;
     text-decoration: none;
-
     font-size: 18px;
     font-weight: bold;
-
     transition: 0.2s;
 }
 
@@ -62,4 +54,3 @@ p {
 .calculator-button:active {
     transform: translateY(0);
 }
-```
