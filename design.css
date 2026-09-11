@@ -1,11 +1,13 @@
 body{
-    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    background-color: #FCD597;
 }
 h1 {
-    font-family: Arial;
+    font-family: Helvetica;
 }
 .menu{
-   color: teal;
+   color: #FCC08D;
    border: solid 5px;
    margin: 10px 100px 10px 100px;
 }
