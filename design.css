@@ -1,3 +1,4 @@
+/*ZÁKLADNÉ*/
 body {
     background-color: #FCD597;
     font-family: Helvetica;
@@ -20,6 +21,8 @@ p {
     margin-bottom: 30px;
 }
 
+
+/*MENU*/
 .menu {
     max-width: 600px;
     margin: 0 auto;
@@ -32,6 +35,7 @@ p {
     gap: 15px;
 }
 
+/*TLAČIDLA*/
 .calculator-button {
     display: block;
     padding: 16px 20px;
@@ -55,6 +59,7 @@ p {
     transform: translateY(0);
 }
 
+/*HISTÓRIA*/
 .history-box {
     max-width: 900px;
     margin: 30px auto;
@@ -71,6 +76,7 @@ p {
     margin-bottom: 25px;
 }
 
+/*TABUĽKA HISTORIE*/
 .history-table {
     width: 100%;
     border-collapse: collapse;
@@ -99,6 +105,7 @@ p {
     background-color: #FCD597;
 }
 
+/*TLAČIDLO SPÄŤ*/
 .back-button {
     display: block;
     width: fit-content;
@@ -118,6 +125,7 @@ p {
     transform: translateY(-2px);
 }
 
+/*TLAČIDLO HISTÓRIA VÝPOČTOV*/
 .history-button {
     display: block;
     width: fit-content;
