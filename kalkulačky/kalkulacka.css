@@ -1,0 +1,130 @@
+body {
+    background-color: #FCD597;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #4A2C18;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.back-button {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 12px 25px;
+    background-color: #FCC08D;
+    color: #4A2C18;
+    border: 2px solid #8B5E34;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    transition: 0.2s;
+}
+
+.back-button:hover {
+    background-color: #F5A96B;
+    transform: translateY(-2px);
+}
+.calc {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #4A4A4A;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.display {
+    background-color: #2E2E2E;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.display-history {
+    color: #888;
+    font-size: 16px;
+    min-height: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.display-current {
+    color: #FFFFFF;
+    font-size: 42px;
+    font-weight: bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.key {
+    padding: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    color: #333;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.key:hover {
+    background-color: #E8E8E8;
+    transform: translateY(-2px);
+}
+
+.key:active {
+    transform: translateY(0);
+}
+
+.key-op {
+    background-color: #F5C542;
+    color: #333;
+}
+
+.key-op:hover {
+    background-color: #E0B030;
+}
+
+.key-equals {
+    background-color: #7CB342;
+    color: white;
+}
+
+.key-equals:hover {
+    background-color: #6A9E38;
+}
+
+.key-clear {
+    background-color: #E74C3C;
+    color: white;
+    grid-column: span 4;
+}
+
+.key-clear:hover {
+    background-color: #C0392B;
+}
+
+.key-zero {
+    grid-column: span 3;
+}

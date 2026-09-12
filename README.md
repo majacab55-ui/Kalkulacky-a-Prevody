@@ -1,87 +1,102 @@
-# 🧮 Portfolio kalkulačiek
+# Kalkulačky a prevody
 
-Webová aplikácia vytvorená ako projekt na precvičenie práce s **HTML, CSS, JavaScriptom, PHP a MySQL**.
+Webová aplikácia vytvorená ako školský projekt na precvičenie práce s **HTML, CSS, JavaScriptom, PHP a MySQL**.
 
 Aplikácia obsahuje viacero kalkulačiek, ktoré umožňujú používateľovi vykonávať rôzne výpočty. Výsledok sa zobrazí okamžite pomocou JavaScriptu a vybrané výpočty sa zároveň ukladajú do databázy.
 
-## ✨ Funkcie
+---
+
+## Funkcie
 
 Projekt obsahuje tieto kalkulačky:
 
-* ➕ **Základná kalkulačka** – sčítanie, odčítanie a ďalšie základné matematické operácie
-* ⚖️ **BMI kalkulačka** – výpočet indexu telesnej hmotnosti
-* 💧 **Kalkulačka príjmu vody** – odporúčaný denný príjem vody
-* 📏 **Prevod jednotiek** – prevod medzi rôznymi jednotkami
+- **Základná kalkulačka** – sčítanie, odčítanie a ďalšie základné matematické operácie
+- **BMI kalkulačka** – výpočet indexu telesnej hmotnosti
+- **Kalkulačka príjmu vody** – odporúčaný denný príjem vody
+- **Prevod jednotiek** – prevod medzi rôznymi jednotkami
 
 ### História výpočtov
 
-Výsledky výpočtov sa odosielajú pomocou JavaScriptu na PHP backend, ktorý ich uloží do MySQL databázy.
+Výsledky výpočtov sa odosielajú pomocou JavaScriptu (`fetch`) na PHP backend, ktorý ich uloží do MySQL databázy.
 
-Na hlavnej stránke sa následne zobrazujú posledné výpočty.
+Na samostatnej stránke `historia.php` sa následne zobrazujú všetky uložené výpočty.
 
-## 🛠️ Použité technológie
+---
 
-* **HTML** – štruktúra webových stránok
-* **CSS** – vzhľad a dizajn aplikácie
-* **JavaScript** – výpočty a komunikácia so serverom bez obnovovania stránky
-* **PHP** – backend a ukladanie údajov
-* **MySQL** – databáza pre históriu výpočtov
-* **AJAX / Fetch API** – odosielanie údajov medzi JavaScriptom a PHP
+## Použité technológie
 
-## 📁 Štruktúra projektu
+- **HTML** – štruktúra webových stránok
+- **CSS** – vzhľad a dizajn aplikácie
+- **JavaScript** – výpočty a komunikácia so serverom bez obnovovania stránky
+- **PHP** – backend a ukladanie údajov
+- **MySQL** – databáza pre históriu výpočtov
+- **AJAX / Fetch API** – odosielanie údajov medzi JavaScriptom a PHP
+
+---
+
+## Štruktúra projektu
 
 ```text
-pouzivatelske-menu/
+Kalkulacky-a-Prevody/
 │
-├── index.php
-├── style.css
-├── script.js
+├── menu.html              # Hlavná stránka s výberom kalkulačiek
+├── historia.php           # Stránka s históriou výpočtov (číta z DB)
+├── design.css             # Spoločný CSS štýl pre celý projekt
+├── README.md              # Tento súbor
 │
 ├── kalkulacky/
-│   ├── basic.php
-│   ├── bmi.php
-│   ├── voda.php
-│   └── jednotky.php
+│   ├── basic.php          # Základná kalkulačka
+│   ├── bmi.php            # BMI kalkulačka
+│   ├── voda.php           # Kalkulačka príjmu vody
+│   └── jednotky.php       # Prevod jednotiek
 │
 └── backend/
-    ├── db_connect.php
-    └── save_history.php
+    ├── db_connect.php     # Pripojenie k MySQL databáze
+    └── save_history.php   # Uloženie výpočtu do DB (volané cez fetch)
 ```
 
-## 🚀 Spustenie projektu
+---
 
-Na spustenie projektu je potrebné mať lokálny server, napríklad **XAMPP**.
+## Spustenie projektu
 
-### 1. Nainštalovanie XAMPP
+Na spustenie projektu je potrebný lokálny server **XAMPP** (Apache + MySQL + PHP).
 
-Nainštalujte si XAMPP a spustite:
+### 1. Inštalácia XAMPP
 
-* Apache
-* MySQL
+Stiahni a nainštaluj [XAMPP](https://www.apachefriends.org/).
+
+Spusti **XAMPP Control Panel** a zapni:
+
+- **Apache**
+- **MySQL**
+
+> **Dôležité:** Ak máš na Windows zapnutý **IIS** (Internet Information Services), môže blokovať port 80. V takom prípade buď IIS vypni, alebo v XAMPP nastav Apache na iný port (napr. `81`).
 
 ### 2. Umiestnenie projektu
 
-Celý priečinok projektu vložte do:
+Celý priečinok projektu vlož do:
 
 ```text
-C:\xampp\htdocs\
-```
-
-Napríklad:
-
-```text
-C:\xampp\htdocs\pouzivatelske-menu\
+C:\xampp\htdocs\Kalkulacky-a-Prevody\
 ```
 
 ### 3. Vytvorenie databázy
 
-Otvorte phpMyAdmin a vytvorte databázu, napríklad:
+Otvor v prehliadači phpMyAdmin:
+
+```text
+http://localhost:81/phpmyadmin
+```
+
+(Ak máš Apache na porte 80, použi `http://localhost/phpmyadmin`.)
+
+Vytvor novú databázu s názvom:
 
 ```text
 kalkulacky
 ```
 
-Následne vytvorte tabuľku:
+Následne v tejto databáze spusti tento SQL príkaz (záložka **SQL**):
 
 ```sql
 CREATE TABLE historie (
@@ -95,19 +110,10 @@ CREATE TABLE historie (
 
 ### 4. Nastavenie pripojenia k databáze
 
-V súbore:
-
-```text
-backend/db_connect.php
-```
-
-nastavte údaje potrebné na pripojenie k MySQL databáze.
-
-Príklad:
+V súbore `backend/db_connect.php` nastav údaje potrebné na pripojenie k MySQL:
 
 ```php
 <?php
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -123,55 +129,90 @@ $conn->set_charset("utf8mb4");
 ?>
 ```
 
+> Predvolené XAMPP údaje sú `root` / prázdne heslo. Ak máš iné, uprav ich.
+
 ### 5. Spustenie aplikácie
 
-Po zapnutí Apache a MySQL otvorte v prehliadači:
+Po zapnutí Apache a MySQL otvor v prehliadači:
 
 ```text
-http://localhost/pouzivatelske-menu/
+http://localhost:81/Kalkulacky-a-Prevody/menu.html
 ```
 
-## 🔄 Ako aplikácia funguje
+> Ak máš Apache na porte 80, použi `http://localhost/Kalkulacky-a-Prevody/menu.html`.
+
+---
+
+## Ako to funguje
 
 Proces výpočtu prebieha nasledovne:
 
-1. Používateľ zadá údaje do formulára.
+1. Používateľ zadá údaje do formulára v niektorej kalkulačke.
 2. Klikne na tlačidlo pre výpočet.
 3. JavaScript spracuje zadané hodnoty.
-4. Výsledok sa okamžite zobrazí na stránke.
-5. JavaScript odošle údaje pomocou `fetch()` na PHP backend.
-6. PHP prijme údaje a uloží ich do MySQL databázy.
-7. História výpočtov sa môže zobraziť na hlavnej stránke.
+4. Výsledok sa okamžite zobrazí na stránke (bez obnovenia).
+5. JavaScript odošle údaje pomocou `fetch()` na `backend/save_history.php`.
+6. PHP prijme údaje a uloží ich do MySQL tabuľky `historie`.
+7. História výpočtov sa zobrazí na stránke `historia.php`.
 
 Vďaka JavaScriptu nie je pri samotnom výpočte potrebné obnovovať celú stránku.
 
-## 🎯 Cieľ projektu
+---
 
-Cieľom projektu je vytvoriť jednoduchú webovú aplikáciu, na ktorej si môžem precvičiť:
+## Časté problémy
 
-* tvorbu webových stránok,
-* prácu s JavaScriptom,
-* komunikáciu frontend ↔ backend,
-* prácu s PHP,
-* pripojenie k MySQL databáze,
-* ukladanie a zobrazovanie údajov z databázy.
+### Vidím holý PHP kód namiesto stránky
 
-## 🔮 Možné vylepšenia
+Súbor otváraš cez `file:///...` – musíš ho otvoriť cez `http://localhost:81/...`. PHP sa vykonáva len na serveri.
+
+### `404 Not Found` alebo `IIS Web Core` chyba
+
+Na porte 80 ti beží **IIS**, nie Apache. Vypni IIS alebo zmeň port Apache na 81.
+
+### `Warning: include(backend/db_connect.php): Failed to open stream`
+
+Súbor `backend/db_connect.php` neexistuje alebo je na zlom mieste. Skontroluj štruktúru priečinkov.
+
+### `Access denied for user 'root'@'localhost'`
+
+Zlé prihlasovacie údaje v `db_connect.php`. Predvolené pre XAMPP sú `root` a prázdne heslo.
+
+### Tabuľka je prázdna
+
+História sa naplní až po tom, čo použiješ niektorú z kalkulačiek (a tá musí mať kód, ktorý ukladá výsledok do DB).
+
+---
+
+## Cieľ projektu
+
+Cieľom projektu je vytvoriť jednoduchú webovú aplikáciu, na ktorej si možno precvičiť:
+
+- tvorbu webových stránok,
+- prácu s JavaScriptom,
+- komunikáciu frontend ↔ backend,
+- prácu s PHP,
+- pripojenie k MySQL databáze,
+- ukladanie a zobrazovanie údajov z databázy.
+
+---
+
+## Možné vylepšenia
 
 Do budúcnosti je možné pridať:
 
-* prihlasovanie používateľov,
-* samostatnú históriu pre každého používateľa,
-* mazanie histórie,
-* ďalšie typy kalkulačiek,
-* responzívnejší dizajn pre mobilné zariadenia,
-* validáciu vstupných údajov,
-* tmavý režim,
-* filtrovanie a vyhľadávanie v histórii.
+- prihlasovanie používateľov,
+- samostatnú históriu pre každého používateľa,
+- mazanie histórie,
+- ďalšie typy kalkulačiek,
+- responzívnejší dizajn pre mobilné zariadenia,
+- validáciu vstupných údajov,
+- tmavý režim,
+- filtrovanie a vyhľadávanie v histórii.
+
+---
 
 ## 👩‍💻 Autor
 
-**[Tvoje meno]**
+**Mária**
 
-Školský projekt / osobné portfólio.
-
+Osobné portfólio.
