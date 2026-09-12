@@ -117,3 +117,27 @@ p {
     background-color: #F5A96B;
     transform: translateY(-2px);
 }
+
+.history-button {
+    display: block;
+    width: fit-content;
+    margin: 50px auto 0;
+    padding: 16px 30px;
+    background-color: #FCC08D;
+    color: #4A2C18;
+    border: 2px solid #8B5E34;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.history-button:hover {
+    background-color: #F5A96B;
+    transform: translateY(-2px);
+}
+
+.history-button:active {
+    transform: translateY(0);
+}

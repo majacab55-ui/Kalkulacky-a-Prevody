@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>História výpočtov</title>
-
     <link rel="stylesheet" href="design.css">
 </head>
 
@@ -15,9 +13,7 @@
     <div class="history-box">
 
         <h2>História výpočtov</h2>
-
         <table class="history-table">
-
             <tr>
                 <th>Kalkulačka</th>
                 <th>Vstup</th>
@@ -44,7 +40,7 @@
 
         </table>
 
-        <a class="back-button" href="kalkulačky.html">
+        <a class="back-button" href="menu.html">
             ← Späť
         </a>
 
@@ -52,4 +48,3 @@
 
 </body>
 </html>
-```
