@@ -45,10 +45,10 @@ Kalkulacky-a-Prevody/
 ├── README.md              # Tento súbor
 │
 ├── kalkulacky/
-│   ├── basic.php          # Základná kalkulačka
+│   ├── kalkulačka.php     # Základná kalkulačka
 │   ├── bmi.php            # BMI kalkulačka
 │   ├── voda.php           # Kalkulačka príjmu vody
-│   └── jednotky.php       # Prevod jednotiek
+│   └── prevody.php        # Prevod jednotiek
 │
 └── backend/
     ├── db_connect.php     # Pripojenie k MySQL databáze

@@ -28,13 +28,17 @@
                     "SELECT * FROM historie ORDER BY datum DESC"
                 );
 
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['typ_kalkulacky']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['vstup']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['vysledok']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['datum']) . "</td>";
-                    echo "</tr>";
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['typ_kalkulacky']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['vstup']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['vysledok']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['datum']) . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>Žiadne záznamy v histórii.</td></tr>";
                 }
             ?>
 
