@@ -211,7 +211,7 @@ Do budúcnosti je možné pridať:
 
 ---
 
-## 👩‍💻 Autor
+## Autor
 
 **Mária**
 
